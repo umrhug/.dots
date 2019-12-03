@@ -1,2 +1,2 @@
 # .dots
-growing my configurations in a home directory
+growing some configurations in my home directory
