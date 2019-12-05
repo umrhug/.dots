@@ -1,0 +1,26 @@
+### first, ignore all ###
+/*
+/.**
+
+### specifies not to ignore ###
+!/.zshenv
+!/.zsh/
+!/.zsh/.zshrc
+!/.zsh/.zshrc.darwin
+!/.zsh/.zsh_aliases
+!/.zsh/.zprofile
+!/.vimrc
+!/.vim/
+!/.vim/bundles.vim
+!/.bin
+!/.bin/**
+!/.gdbinit
+
+!/README.md
+!/LICENSE
+
+!/.gitignore_global
+!/.gitignore_shared
+!.gitignore
+!.gitkeep
+
