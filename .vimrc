@@ -3,7 +3,7 @@
 scriptencoding utf-8
 
 
-source $HOME/.vim/bundles.vim
+source $HOME/.dots/.vim/bundles.vim
 
 
 " color scheme

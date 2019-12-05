@@ -3,7 +3,7 @@
 
 ##
 #
-export ZDOTDIR="$HOME/.zsh"
+export ZDOTDIR="$HOME/.dots/.zsh"
 
 ## pyenv path installed using homebrew
 #
