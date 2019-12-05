@@ -1,0 +1,2 @@
+[include]
+	path = ~/.dots/.gitconfig_shared
