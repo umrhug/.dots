@@ -20,7 +20,7 @@
 !/LICENSE
 
 !/.gitignore_global
-!/.gitignore_shared
+!/.gitconfig_shared
 !.gitignore
 !.gitkeep
 
