@@ -33,6 +33,8 @@ if dein#load_state('/Users/umrhug/.cache/dein')
 
 ""  call dein#add('davidhalter/jedi-vim')
 
+  call dein#add('rust-lang/rust.vim')
+
   " Required:
   call dein#end()
   call dein#save_state()
