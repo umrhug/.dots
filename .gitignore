@@ -13,6 +13,7 @@
 !/.vim/
 !/.vim/bundles.vim
 !/.vim/keybind.vim
+!/.screenrc
 !/.bash/
 !/.bash/.bash_aliases
 !/.bash/.bash_profile

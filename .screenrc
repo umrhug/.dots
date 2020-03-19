@@ -1,0 +1,66 @@
+escape ^Tt
+
+## ignore visual bell
+vbell off
+
+## display status line
+hardstatus off
+hardstatus alwayslastline
+
+hardstatus string '%{= dg}[%H]%{-}%{= dw}[%L= %= %-w%45L>%{=r dg}(%n %t)%{-}%+w%= %-28<]%{-}%{= dy}[%l]%{-}%{= dw}[%{= db}%02c:%s%{-}]'
+#hardstatus string "%{= kw}%02c:%s %{= .y}%H %L=%{= .b}%-w%{-}%46>%{= .r}%n %t*%{= .b}%+w%-16=%{= .y}[%l]"
+#hardstatus string '%{= dg}[%{G}%H%{g}][%= %{w}%?%-Lw%?%{r}(%{= R}%n*%f%t%?(%u)%?%{= R})%{w}%?%+Lw%?%= %{g}][%{y}%l%{g}][%{B}%y/%m/%d %{W}%02c:%s%{g}]'
+
+#hardstatus string '%{= G}[%{G}%H%{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][%{y}%l%{g}][%{B}%y/%m/%d %{W}%02c:%s%{g}]'
+#hardstatus string '%{= dg}[%{G}%H%{g}][%= %{w}%?%-Lw%?%{r}(%{= R}%n*%f%t%?(%u)%?%{= R})%{w}%?%+Lw%?%= %{g}][%{y}%l%{g}][%{B}%y/%m/%d %{W}%02c:%s%{g}]'
+#hardstatus string '%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<'
+
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%_%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
+#hardstatus alwayslastline "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %t%{= wk}%+Lw %{= wk}%=%{= gk} %Y%m%d %c %= [%l] "
+#hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w %= [%l] "
+#hardstatus alwayslastline "%{= cd} %-w%{= dd} %n %t* %{-}%+w %= [%l]"
+
+## ignore startup message
+startup_message off
+
+## detach automatically
+autodetach on
+
+## scroll back 10240 lines
+defscrollback 10240
+
+altscreen on
+#rendition so =00
+#caption string '%{03} '
+
+#termcapinfo xterm* ti@:te@
+
+## switch encode, ^T U: UTF-8 / ^T E: EUC-JP
+#bind U eval "encoding utf-8"  "!!!echo 'export LANG=ja_JP.UTF-8'"
+#bind E eval "encoding euc-jp" "!!!echo 'export LANG=ja_JP.EUC-JP'"
+
+## encode
+defutf8 on
+defkanji utf-8
+encoding utf-8 utf-8
+defencoding utf-8
+
+## set term
+defbce on
+term xterm-256color
+
+## list of all windows is displayed in the blank window for visual window
+#selection.
+bind w windowlist -b -m
+bind ^w windowlist -b
+windowlist title '%{u .c}Num Flags Title%=[0-9] select the number [movement] j,C-n:Down k,C-p:Up (C-)f:PageDown (C-)b:PageUp'
+windowlist string '%{.c}%3n %f%09=%{dc} %t %='
+
+bind "," prev
+bind "." next
+
+bind h focus left
+bind j focus down
+bind k focus up
+bind l focus right
+
