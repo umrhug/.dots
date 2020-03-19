@@ -21,3 +21,5 @@ compinit
 autoload -Uz colors
 colors
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
