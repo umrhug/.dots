@@ -12,6 +12,11 @@
 !/.vimrc
 !/.vim/
 !/.vim/bundles.vim
+!/.vim/keybind.vim
+!/.bash/
+!/.bash/.bash_aliases
+!/.bash/.bash_profile
+!/.bash/.bashrc
 !/.bin
 !/.bin/**
 !/.gdbinit
