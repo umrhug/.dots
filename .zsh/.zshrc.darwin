@@ -26,3 +26,7 @@ fi
 #
 #export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
+if [[ -z "$STY" ]]; then
+  #screen
+fi
+
