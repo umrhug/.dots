@@ -8,6 +8,7 @@ alias ls='ls -G'
 alias l='ls -CF'
 alias ll='ls -h -CF -l'
 alias la='ls -CF -A'
+alias l1='ls -1'
 #
 alias cp='cp -i'
 alias mv='mv -i'
@@ -16,7 +17,7 @@ alias rm='rm -i'
 alias df='df -h'
 alias du='du -h'
 #
-alias grep='grep --color=auto'
+alias grep='grep --color=always'
 alias mkdir='mkdir -p'
 #
 alias ctags='/usr/local/bin/ctags'
@@ -24,3 +25,4 @@ alias ctags='/usr/local/bin/ctags'
 alias path='echo -e ${PATH//:/\\n}'
 alias ..='cd ..'
 
+export LESS='-R'
