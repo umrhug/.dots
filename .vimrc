@@ -5,7 +5,7 @@ scriptencoding utf-8
 "
 " import bundle plugins defines
 "
-source $HOME/.dots/.vim/bundles.vim
+source $HOME/.vim/bundles.vim
 
 
 " color scheme
