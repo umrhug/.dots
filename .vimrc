@@ -12,6 +12,9 @@ source $HOME/.vim/bundles.vim
 set background=dark
 color iceberg
 
+set shortmess+=I
+set formatoptions+=mMt
+
 " highlight current line
 au WinLeave * set nocursorline " nocursorcolumn
 au WinEnter * set cursorline   " cursorcolumn
@@ -20,9 +23,10 @@ set cursorline                 " cursorcolumn
 "
 " search
 "
+set incsearch
 set ignorecase
 set smartcase
-set incsearch
+set wrapscan
 set hlsearch
 nmap     <silent> <Esc><Esc> :nohlsearch<CR>
 nnoremap <silent> gh :let @/=''<CR>
@@ -72,10 +76,12 @@ set noswapfile
 " default indentation
 "
 set autoindent
+set copyindent
+set preserveindent
 set smartindent   " indent when
-set tabstop=4     " tab width
-set softtabstop=4 " backspace
-set shiftwidth=4  " indent width
+set tabstop=2     " tab width
+set softtabstop=2 " backspace
+set shiftwidth=2  " indent width
 set textwidth=79
 set smarttab
 set expandtab     " expand tab to spaces
