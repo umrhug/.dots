@@ -18,6 +18,7 @@
 !/.bash/.bash_aliases
 !/.bash/.bash_profile
 !/.bash/.bashrc
+!/.bash/.profile
 !/.bin
 !/.bin/**
 !/.gdbinit
