@@ -27,6 +27,9 @@
 !/README.md
 !/LICENSE
 
+!/scripts
+!/scripts/dein-installer.sh
+
 !/.gitignore_global
 !/.gitconfig_shared
 !.gitignore
