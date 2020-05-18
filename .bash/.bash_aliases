@@ -3,6 +3,7 @@
 alias h='history'
 alias pu='pushd'
 alias po='popd'
+alias jo='jobs -l'
 #
 alias ls='ls --color=auto -G'
 alias ll='ls -alF'
