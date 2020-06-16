@@ -10,7 +10,7 @@ source $HOME/.vim/bundles.vim
 
 " color scheme
 set background=dark
-color iceberg
+color koehler
 
 set shortmess+=I
 set formatoptions+=mMt
