@@ -58,7 +58,7 @@ set matchpairs+=<:>
 set list
 "set listchars=tab:.\ ,trail:_,extends:<
 set listchars=tab:≫-,trail:-,extends:≫,precedes:«,nbsp:%,eol:↲
-set number
+set nonumber
 set nowrap
 
 "
