@@ -3,22 +3,23 @@
 alias h='history'
 alias pu='pushd'
 alias po='popd'
+alias jo='jobs -l'
 #
-alias ls='ls -G'
-alias l='ls -CF'
-alias ll='ls -h -CF -l'
-alias la='ls -CF -A'
-alias l1='ls -1'
+alias ls='/bin/ls -G'
+alias l='/bin/ls -CF'
+alias ll='/bin/ls -h -CF -l'
+alias la='/bin/ls -CF -A'
+alias l1='/bin/ls -1'
 #
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+alias cp='/bin/cp -i'
+alias mv='/bin/mv -i'
+alias rm='/bin/rm -i'
 #
-alias df='df -h'
-alias du='du -h'
+alias df='/usr/bin/df -h'
+alias du='/usr/bin/du -h'
 #
-alias grep='grep --color=always'
-alias mkdir='mkdir -p'
+alias grep='/usr/bin/grep --color=always'
+alias mkdir='/bin/mkdir -p'
 #
 alias ctags='/usr/local/bin/ctags'
 #
