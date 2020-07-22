@@ -10,7 +10,8 @@ source $HOME/.vim/bundles.vim
 
 " color scheme
 set background=dark
-color koehler
+"color koehler
+color onedark
 
 set shortmess+=I
 set formatoptions+=mMt
@@ -62,7 +63,7 @@ set matchpairs+=<:>
 set list
 "set listchars=tab:.\ ,trail:_,extends:<
 set listchars=tab:≫-,trail:-,extends:≫,precedes:«,nbsp:%,eol:↲
-set number
+set nonumber
 set nowrap
 
 "
@@ -170,6 +171,15 @@ if has_key(dein#get(), 'vim-quickrun')
       execute 'vnoremap <silent>' keybind ':QuickRun' cmd '-mode v<CR>'
   endfor
   nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_session() : '<C-c>'
+endif
+
+"
+" configuration vim-buftabline
+"
+if has_key(dein#get(), 'vim-buftabline')
+  set hidden
+  nnoremap <silent> <C-n> :bnext<CR>
+  nnoremap <silent> <C-p> :bprev<CR>
 endif
 
 "
