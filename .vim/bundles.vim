@@ -28,6 +28,7 @@ if dein#load_state("$HOME/.cache/dein")
 
 "  call dein#add('cocopon/iceberg.vim')
 "  call dein#add('itchyny/lightline.vim')
+  call dein#add('tomasr/molokai')
   call dein#add('joshdick/onedark.vim')
   call dein#add('110y/vim-buftabline')
 
