@@ -11,7 +11,8 @@ source $HOME/.vim/bundles.vim
 " color scheme
 set background=dark
 "color koehler
-color onedark
+"color onedark
+color molokai
 
 set shortmess+=I
 set formatoptions+=mMt
