@@ -23,6 +23,7 @@
 !/.bin/**
 !/.gdbinit
 !/.gitconfig
+!/.tigrc
 
 !/README.md
 !/LICENSE
