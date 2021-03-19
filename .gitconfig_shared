@@ -1,10 +1,35 @@
+[user]
+	name = umrhug
+	email = umrhug@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[push]
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+	ui = auto
+[alias]
+	di = diff
+	co = checkout
+	ci = commit
+	ca = commit -a
+	st = status
+	br = branch
+[hub]
+	protocol = https
+[github]
+	user = umrhug
+[diff]
+	tool = vimdiff
+[difftool "vimdiff"]
+	cmd = vimdiff -d \"$LOCAL\" \"$REMOTE\"
+	path = 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = umrhug
-	email = umrhug@gmail.com
-[github]
-    user = umrhug
