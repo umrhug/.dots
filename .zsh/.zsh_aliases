@@ -25,5 +25,7 @@ alias ctags='/usr/local/bin/ctags'
 #
 alias path='echo -e ${PATH//:/\\n}'
 alias ..='cd ..'
+#
+alias g='git'
 
 export LESS='-R'
