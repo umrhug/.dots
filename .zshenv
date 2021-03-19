@@ -16,3 +16,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 #
 #export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
+source "$HOME/.cargo/env"
