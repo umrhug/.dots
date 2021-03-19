@@ -11,7 +11,7 @@ if which pyenv-virtualenv-init > /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
+#export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 #export PATH="/usr/local/opt/ruby/bin:$PATH"
 #export LDFLAGS="-L/usr/local/opt/ruby/lib"
@@ -40,10 +40,9 @@ autoload -Uz colors
 colors
 
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 ## opencv@3 installed with brew install opencv@3
 #
-export CPLUS_INCLUDE_PATH="/usr/local/opt/opencv@3/include/:$CPLUS_INCLUDE_PATH"
-export LIBRARY_PATH="/usr/local/opt/opencv@3/lib/:$LIBRARY_PATH"
-export PATH="/usr/local/opt/opencv@3/bin:$PATH"
+#export CPLUS_INCLUDE_PATH="/usr/local/opt/opencv@3/include/:$CPLUS_INCLUDE_PATH"
+#export LIBRARY_PATH="/usr/local/opt/opencv@3/lib/:$LIBRARY_PATH"
+#export PATH="/usr/local/opt/opencv@3/bin:$PATH"

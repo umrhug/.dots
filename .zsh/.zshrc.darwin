@@ -30,3 +30,9 @@ if [[ -z "$STY" ]]; then
   #screen
 fi
 
+if [ -e $HOME/.homebrew ] ; then
+  export PATH="$PATH:$HOME/.homebrew/bin"
+  export HOMEBREW_CACHE="$HOME/.homebrew/caches"
+fi
+
+export PATH="$PATH:$HOME/Library/Python/3.8/bin"
