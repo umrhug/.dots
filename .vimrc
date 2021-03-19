@@ -11,7 +11,8 @@ source $HOME/.vim/bundles.vim
 " color scheme
 set background=dark
 "color koehler
-color onedark
+"color onedark
+color molokai
 
 set shortmess+=I
 set formatoptions+=mMt
@@ -89,6 +90,9 @@ set smarttab
 set noexpandtab		" expand tab to spaces
 
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType go     setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+
+let mapleader = "\<Space>"
 
 "
 " syntax support
@@ -182,6 +186,60 @@ if has_key(dein#get(), 'vim-buftabline')
 	let g:buftabline_indicators = 1
 	nnoremap <silent> <C-n> :bnext<CR>
 	nnoremap <silent> <C-p> :bprev<CR>
+endif
+
+"
+" configuration tig-explorer
+"
+if has_key(dein#get(), 'tig-explorer.vim')
+	nnoremap <Leader>T		:TigOpenCurrentFile<CR>
+	nnoremap <Leader>t		:TigOpenProjectRootDir<CR>
+	nnoremap <Leader>g		:TigGrep<CR>
+	nnoremap <Leader>r		:TigGrepResume<CR>
+	nnoremap <Leader>g y	:TigGrep<Space><C-R>"<CR>
+	nnoremap <Leader>cg		:<C-u>:TigGrep<Space><C-R><C-W><CR>
+	nnoremap <Leader>b		:TigBlame<CR>
+
+	let g:tig_explorer_use_builtin_term = 0
+endif
+
+"
+" configuration vim-lsp
+"
+if has_key(dein#get(), 'vim-lsp')
+	let g:lsp_log_verbose = 0
+	let g:lsp_log_file = expand('~/.cache/tmp/vim-lsp.log')
+
+	augroup MyLsp
+		autocmd!
+		if executable('pyls')
+			autocmd User lsp_setup call lsp#register_server({
+				\	'name': 'pyls',
+				\	'cmd': { server_info -> ['pyls'] },
+				\	'whitelist': ['python'],
+				\	'workspace_config': {'pyls': {'plugins': {
+				\		'pycodestyle': {'enabled': v:false},
+				\		'jedi_definition': {'follow_imports': v:true, 'follow_builtin_imports': v:true},}}}
+				\})
+			autocmd FileType python call s:configure_lsp()
+		endif
+	augroup END
+
+	function! s:configure_lsp() abort
+		setlocal omnifunc=lsp#complete
+		nnoremap <buffer> <C-j> :<C-u>LspDefinition<CR>
+		nnoremap <buffer> gd    :<C-u>LspDefinition<CR>
+		nnoremap <buffer> gD    :<C-u>LspReferences<CR>
+		nnoremap <buffer> gs    :<C-u>LspDocumentSymbol<CR>
+		nnoremap <buffer> gS    :<C-u>LspWorkspaceSymbol<CR>
+		nnoremap <buffer> gQ    :<C-u>LspDocumentFormat<CR>
+		vnoremap <buffer> gQ    :LspDocumentRangeFormat<CR>
+		nnoremap <buffer> K     :<C-u>LspHover<CR>
+		nnoremap <buffer> <F1>  :<C-u>LspImplementation<CR>
+		nnoremap <buffer> <F2>  :<C-u>LspRename<CR>
+	endfunction
+
+	let g:lsp_diagnostics_enabled = 0
 endif
 
 "
