@@ -10,6 +10,7 @@
 !/.zsh/.zsh_aliases
 !/.zsh/.zprofile
 !/.vimrc
+!/.gvimrc
 !/.vim/
 !/.vim/bundles.vim
 !/.vim/keybind.vim
