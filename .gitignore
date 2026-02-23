@@ -9,8 +9,8 @@
 !/.zsh/.zshrc.darwin
 !/.zsh/.zsh_aliases
 !/.zsh/.zprofile
-!/.vimrc
 !/.gvimrc
+!/.vimrc
 !/.vim/
 !/.vim/bundles.vim
 !/.vim/keybind.vim
