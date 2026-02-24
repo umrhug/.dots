@@ -34,6 +34,6 @@
 
 !/.gitignore_global
 !/.gitconfig_shared
-!.gitignore
-!.gitkeep
+!/.gitignore
+!/.gitkeep
 
