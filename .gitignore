@@ -31,6 +31,7 @@
 
 !/scripts
 !/scripts/dein-installer.sh
+!/scripts/install.sh
 
 !/.gitignore_global
 !/.gitconfig_shared
