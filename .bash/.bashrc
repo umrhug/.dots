@@ -11,6 +11,7 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
+HISTIGNORE="ls:cd:l:la:ll:pwd:ps"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -115,4 +116,19 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source "$HOME/.cargo/env"
+
+#
+if [ -e "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+#
+if [ -e "$HOME/apps/go/bin" ]; then
+    export GOPATH="$HOME/.go"
+    export PATH="$HOME/apps/go/bin:$GOPATH/bin:$PATH"
+fi
+
+#
+if [ -e "$HOME/apps/nvim/bin" ]; then
+    export PATH="$HOME/apps/nvim/bin:$PATH"
+fi
