@@ -10,9 +10,10 @@ source $HOME/.vim/bundles.vim
 
 " color scheme
 set background=dark
-"color koehler
-"color onedark
-color molokai
+color iceberg
+"color molokai
+"color gruvbox
+"color habamax
 
 set shortmess+=I
 set formatoptions+=mMt
@@ -56,7 +57,6 @@ set laststatus=2
 set showmatch
 set matchtime=2
 set matchpairs+=<:>
-"set relativenumber
 
 "
 " display
@@ -64,7 +64,9 @@ set matchpairs+=<:>
 set list
 "set listchars=tab:.\ ,trail:_,extends:<
 set listchars=tab:.\ ,trail:-,extends:≫,precedes:«,nbsp:%,eol:↲
-set nonumber
+"set nonumber
+set number
+set relativenumber
 set nowrap
 set splitright
 
@@ -127,7 +129,28 @@ endif
 " configuration taglist.vim
 "
 if has_key(dein#get(), 'taglist.vim')
-	set tags=./.tags,./tags,.tags,tags
+	set tags=./.tags;~
+	#
+	function! s:execute_ctags() abort
+		" tag filename
+		let tag_name = '.tags'
+		" recurcive search tag file
+		let tags_path = findfile(tag_name, '.;')
+		if tags_path ==# '
+			return
+		endif
+		" get the directory path for existing tqg file
+		" check the filename-modifiers ':p:h'
+		let tags_dirpath = fnamemodify(tags_path, ';p;h')
+		" change directory to existing tag file, and execute ctags shell command in the background
+		execute 'silent !cd' tags_dirpath '&& ctags -R -f' tag_name '2> /dev/null &'
+	endfunction
+	#
+	augroup ctags
+		autocmd!
+		autocmd BufWritePost * call s:execute_ctags()
+	augroup END
+
 	let Tlist_Ctags_Cmd = 'ctags'
 	let Tlist_Show_One_File = 1
 	let Tlist_Use_Right_Window = 0
@@ -181,11 +204,16 @@ endif
 "
 " configuration vim-buftabline
 "
-if has_key(dein#get(), 'vim-buftabline')
-	set hidden
-	let g:buftabline_indicators = 1
-	nnoremap <silent> <C-n> :bnext<CR>
-	nnoremap <silent> <C-p> :bprev<CR>
+if has('gui_running')
+	let g:buftabline_show = 0
+else
+	if has_key(dein#get(), 'vim-buftabline')
+		set hidden
+		let g:buftabline_show = 2
+		let g:buftabline_indicators = 1
+		nnoremap <silent> <C-n> :bnext<CR>
+		nnoremap <silent> <C-p> :bprev<CR>
+	endif
 endif
 
 "
@@ -196,7 +224,7 @@ if has_key(dein#get(), 'tig-explorer.vim')
 	nnoremap <Leader>t		:TigOpenProjectRootDir<CR>
 	nnoremap <Leader>g		:TigGrep<CR>
 	nnoremap <Leader>r		:TigGrepResume<CR>
-	nnoremap <Leader>g y	:TigGrep<Space><C-R>"<CR>
+	nnoremap <Leader>gy		:TigGrep<Space><C-R>"<CR>
 	nnoremap <Leader>cg		:<C-u>:TigGrep<Space><C-R><C-W><CR>
 	nnoremap <Leader>b		:TigBlame<CR>
 
