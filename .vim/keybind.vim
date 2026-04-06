@@ -3,6 +3,12 @@
 "
 inoremap jj <Esc>
 
+vnoremap ; :
+vnoremap : ;
+
+nnoremap ; :
+nnoremap : ;
+
 nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
 
