@@ -33,19 +33,15 @@ if dein#load_state("$HOME/.cache/dein")
   """call dein#add('vim-scripts/taglist.vim')
   """call dein#add('tpope/vim-fugitive')
 
-"  call dein#add('cocopon/iceberg.vim')
+  call dein#add('cocopon/iceberg.vim')
+  call dein#add('tomasr/molokai')
+  call dein#add('morhetz/gruvbox')
+
+  call dein#add('110y/vim-buftabline')
+  call dein#add('vim-airline/vim-airline')
 "  call dein#add('itchyny/lightline.vim')
 
-  call dein#add('tomasr/molokai')
-  call dein#add('joshdick/onedark.vim')
-  call dein#add('110y/vim-buftabline')
-
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('110y/vim-airline-theme-simplest')
-  let g:airline_theme='simplest'
-
   """call dein#add('thinca/vim-quickrun')
-
 ""  call dein#add('davidhalter/jedi-vim')
 
   call dein#add('rust-lang/rust.vim')
