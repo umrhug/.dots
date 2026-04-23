@@ -132,3 +132,15 @@ fi
 if [ -e "$HOME/apps/nvim/bin" ]; then
     export PATH="$HOME/apps/nvim/bin:$PATH"
 fi
+
+export GTK_IM_MODULE=uim
+export QT_IM_MODULE=uim
+#export XMODIFIERS=@im=fcitx
+#
+if [ -z "$UIM_FEP_RUNNING" ]; then
+	export UIM_FEP_RUNNING=1
+  # in the case of chromebook terminal, put firts character '-' as prefix
+  # remove prefix '-'
+	uim-fep -e "${0#-}"
+	exit
+fi
