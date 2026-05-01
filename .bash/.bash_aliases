@@ -28,7 +28,15 @@ alias ..='cd ..'
 #
 alias g='git'
 
-alias up='byobu popup -E bash'
+check_process() {
+	pgrep -f "$1" >/dev/null
+}
+up() {
+	local proc_name="tmux"
+	if check_process "$proc_name"; then
+		byobu popup -E bash
+	fi
+}
 
 export LESS='-R'
 
