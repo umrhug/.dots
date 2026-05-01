@@ -118,29 +118,51 @@ if ! shopt -oq posix; then
 fi
 
 #
-if [ -e "$HOME/.cargo/env" ]; then
-    . "$HOME/.cargo/env"
+if [ -e "${HOME}/.cargo/env" ]; then
+  . "${HOME}/.cargo/env"
 fi
 
 #
-if [ -e "$HOME/apps/go/bin" ]; then
-    export GOPATH="$HOME/.go"
-    export PATH="$HOME/apps/go/bin:$GOPATH/bin:$PATH"
+#
+if [ -d "${HOME}/.go" ]; then
+	export GOPATH="${HOME}/.go"
+fi
+
+if [ -d "${HOME}/apps/go/bin" ]; then
+  case "${PATH}" in
+    *"${HOME}/apps/go/bin"*)
+      ;;
+    *)
+      export PATH="${HOME}/apps/go/bin:${GOPATH}/bin:${PATH}"
+      ;;
+  esac
 fi
 
 #
-if [ -e "$HOME/apps/nvim/bin" ]; then
-    export PATH="$HOME/apps/nvim/bin:$PATH"
+if [ -d "${HOME}/apps/nvim/bin" ]; then
+  case "${PATH}" in
+    *"${HOME}/apps/nvim/bin"*)
+      ;;
+    *)
+      export PATH="${HOME}/apps/nvim/bin:${PATH}"
+      ;;
+  esac
 fi
 
+#
+# set and configure uim-fep at the last
+#
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
-#export XMODIFIERS=@im=fcitx
+export XMODIFIERS=@im=uim
+#
+# prevent from double start
 #
 if [ -z "$UIM_FEP_RUNNING" ]; then
-	export UIM_FEP_RUNNING=1
-  # in the case of chromebook terminal, put firts character '-' as prefix
-  # remove prefix '-'
-	uim-fep -e "${0#-}"
-	exit
+  export UIM_FEP_RUNNING=1
+  ## in the case of chromebook terminal, put firts character '-' as prefix
+  ## remove prefix '-'
+  #exec uim-fep -e "${0#-}"
+  exec uim-fep
 fi
+
