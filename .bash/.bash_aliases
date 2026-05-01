@@ -8,7 +8,6 @@ alias jo='jobs -l'
 alias ls='ls --color=auto -G'
 alias ll='ls -alF -h'
 alias la='ls -A'
-alias l1='ls -1 -h'
 alias l='ls -CF'
 #
 alias cp='cp -i'
@@ -28,6 +27,8 @@ alias path='echo -e ${PATH//:/\\n}'
 alias ..='cd ..'
 #
 alias g='git'
+
+alias up='byobu popup -E bash'
 
 export LESS='-R'
 
