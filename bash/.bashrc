@@ -158,11 +158,11 @@ export XMODIFIERS=@im=uim
 #
 # prevent from double start
 #
-if [ -z "$UIM_FEP_RUNNING" ]; then
-  export UIM_FEP_RUNNING=1
+#if [ -z "$UIM_FEP_RUNNING" ]; then
+#  export UIM_FEP_RUNNING=1
   ## in the case of chromebook terminal, put firts character '-' as prefix
   ## remove prefix '-'
   #exec uim-fep -e "${0#-}"
-  exec uim-fep
-fi
+#  exec uim-fep
+#fi
 
