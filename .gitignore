@@ -4,22 +4,22 @@
 
 ### specifies not to ignore ###
 !/.zshenv
-!/.zsh/
-!/.zsh/.zshrc
-!/.zsh/.zshrc.darwin
-!/.zsh/.zsh_aliases
-!/.zsh/.zprofile
+!/zsh/
+!/zsh/.zshrc
+!/zsh/.zshrc.darwin
+!/zsh/.zsh_aliases
+!/zsh/.zprofile
 !/.gvimrc
 !/.vimrc
-!/.vim/
-!/.vim/bundles.vim
-!/.vim/keybind.vim
+!/vim/
+!/vim/bundles.vim
+!/vim/keybind.vim
 !/.screenrc
-!/.bash/
-!/.bash/.bash_aliases
-!/.bash/.bash_profile
-!/.bash/.bashrc
-!/.bash/.profile
+!/bash/
+!/bash/.bash_aliases
+!/bash/.bash_profile
+!/bash/.bashrc
+!/bash/.profile
 !/.bin
 !/.bin/**
 !/.gdbinit
