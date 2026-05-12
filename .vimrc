@@ -273,5 +273,5 @@ endif
 "
 " import keybind and macro defines
 "
-source $HOME/.dots/.vim/keybind.vim
+source $HOME/.dots/vim/keybind.vim
 
