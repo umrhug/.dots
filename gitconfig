@@ -1,5 +1,5 @@
 [include]
-	path = ~/.dots/.gitconfig_shared
+	path = ~/.dots/gitconfig_shared
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

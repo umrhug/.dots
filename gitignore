@@ -3,28 +3,28 @@
 /.**
 
 ### specifies not to ignore ###
-!/.zshenv
+!/zshenv
 !/zsh/
-!/zsh/.zshrc
-!/zsh/.zshrc.darwin
-!/zsh/.zsh_aliases
-!/zsh/.zprofile
-!/.gvimrc
-!/.vimrc
+!/zsh/zshrc
+!/zsh/zshrc.darwin
+!/zsh/zsh_aliases
+!/zsh/zprofile
+!/gvimrc
+!/vimrc
 !/vim/
 !/vim/bundles.vim
 !/vim/keybind.vim
-!/.screenrc
+!/screenrc
 !/bash/
-!/bash/.bash_aliases
-!/bash/.bash_profile
-!/bash/.bashrc
-!/bash/.profile
-!/.bin
-!/.bin/**
-!/.gdbinit
-!/.gitconfig
-!/.tigrc
+!/bash/bash_aliases
+!/bash/bash_profile
+!/bash/bashrc
+!/bash/profile
+!/bin
+!/bin/**
+!/gdbinit
+!/gitconfig
+!/tigrc
 
 !/README.md
 !/LICENSE
@@ -33,8 +33,8 @@
 !/scripts/dein-installer.sh
 !/scripts/install.sh
 
-!/.gitignore_global
-!/.gitconfig_shared
-!/.gitignore
-!/.gitkeep
+!/gitignore_global
+!/gitconfig_shared
+!/gitignore
+!/gitkeep
 
