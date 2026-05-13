@@ -23,14 +23,19 @@ if dein#load_state(g:dein_base)
   " visualizeing ... colorscheme, statusline, bufferline
   call dein#add('ghifarit53/tokyonight-vim')
   call dein#add('vim-airline/vim-airline')
+  call dein#add('ap/vim-buftabline')
   "call dein#add('')
 
   " customizing ... tig
   "call dein#add('Shougo/unite.vim')
   "call dein#add('Shougo/neomru.vim')
   call dein#add('iberianpig/tig-explorer.vim')
+  "call dein#add('vim-scripts/taglist.vim')
+  "call dein#add('tpope/vim-fugitive.vim')
+  "call dein#add('thnica/vim-quickrun.vim')
 
   " supporting langs
+  "call dein#add('prabirshrestha/vim-lsp')
   "call dein#add('rust-lang/rust.vim')
   "call dein#add('fatih/vim-go')
 
