@@ -1,7 +1,6 @@
 ### first, ignore all ###
 /*
 /.**
-/vim/pre-bundles.vim
 
 ### specifies not to ignore ###
 !/zshenv
@@ -12,9 +11,9 @@
 !/zsh/zprofile
 !/gvimrc
 !/vimrc
-!/vim/
 !/vim/bundles.vim
 !/vim/keybind.vim
+/vim/pre-bundles.vim
 !/screenrc
 !/bash/
 !/bash/bash_aliases
