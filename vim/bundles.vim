@@ -11,8 +11,8 @@ endif
 " modifies it below like pre-bundle.vim
 "if dein#load_state("$HOME/.cache/dein")
 "  call dein#begin("$HOME/.cache/dein")
-if dein#load_state(s:dein_base)
-  call dein#begin(s:dein_base)
+if dein#load_state(g:dein_base)
+  call dein#begin(g:dein_base)
 
   " already configured in pre-bundle.vim
   "call dein#add("$HOME/.cache/dein/repos/github.com/Shougo/dein.vim")
@@ -21,7 +21,7 @@ if dein#load_state(s:dein_base)
   " plugins go here:
   "
   " visualizeing ... colorscheme, statusline, bufferline
-  call dein#add('cocopon/iceberg.vim')
+  call dein#add('ghifarit53/tokyonight-vim')
   call dein#add('vim-airline/vim-airline')
   "call dein#add('')
 
