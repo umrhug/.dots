@@ -5,15 +5,18 @@ scriptencoding utf-8
 "
 " import bundle plugins defines
 "
+source $HOME/.dots/vim/pre-bundles.vim
 source $HOME/.dots/vim/bundles.vim
 
 
 " color scheme
 set background=dark
-color iceberg
-"color molokai
-"color gruvbox
-"color habamax
+" tokyonight color available night, storm
+set termguicolors
+let g:tokyonight_style = 'night'
+let g:tokyonight_enable_italic = 1
+let g:airline_theme = 'tokyonight'
+color tokyonight
 
 set shortmess+=I
 set formatoptions+=mMt
