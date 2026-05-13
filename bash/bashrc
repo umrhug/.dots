@@ -89,9 +89,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -117,17 +117,19 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#
+# if rustlang environment is installed, setup it.
+# preventing it from re-sourcing twice in cargo/env.
 if [ -e "${HOME}/.cargo/env" ]; then
   . "${HOME}/.cargo/env"
 fi
 
-#
-#
+# if golang environment is installed, adds it to the search path.
 if [ -d "${HOME}/.go" ]; then
-	export GOPATH="${HOME}/.go"
+  export GOPATH="${HOME}/.go"
 fi
 
+# if golang environment is installed, adds it to the search path
+# with preventing it from re-sourcing twice.
 if [ -d "${HOME}/apps/go/bin" ]; then
   case "${PATH}" in
     *"${HOME}/apps/go/bin"*)
@@ -138,7 +140,8 @@ if [ -d "${HOME}/apps/go/bin" ]; then
   esac
 fi
 
-#
+# if nvim is installed, adds it to the search path with preventing it
+# from re-sourcing twice.
 if [ -d "${HOME}/apps/nvim/bin" ]; then
   case "${PATH}" in
     *"${HOME}/apps/nvim/bin"*)
@@ -152,9 +155,9 @@ fi
 #
 # set and configure uim-fep at the last
 #
-export GTK_IM_MODULE=uim
-export QT_IM_MODULE=uim
-export XMODIFIERS=@im=uim
+#export GTK_IM_MODULE=uim
+#export QT_IM_MODULE=uim
+#export XMODIFIERS=@im=uim
 #
 # prevent from double start
 #
