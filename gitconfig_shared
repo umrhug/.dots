@@ -1,9 +1,5 @@
-[user]
-	name = umrhug
-	email = umrhug@gmail.com
 [core]
 	excludesfile = ~/.dots/gitignore
-	editor = vim
 [push]
 [color]
 	status = auto
@@ -28,4 +24,9 @@
 [difftool "vimdiff"]
 	cmd = vimdiff -d \"$LOCAL\" \"$REMOTE\"
 	path = 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
