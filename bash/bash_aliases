@@ -1,42 +1,57 @@
 ## .bash_aliases
 #
+
+# builtin shell commands abbreviated.
 alias h='history'
 alias pu='pushd'
 alias po='popd'
 alias jo='jobs -l'
-#
+
+# command 'ls' in abbreviated variations.
 alias ls='ls --color=auto -G'
 alias ll='ls -alF -h'
 alias la='ls -A'
 alias l='ls -CF'
-#
+
+# commands with an additional '-i' option for safety
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-#
+
+# commands with an addtional '-h' option for human
 alias df='df -h'
 alias du='du -h'
-# 
-alias grep='grep --color=always'
+
+# commands with an addtional '-p' option to avoid stopping due to an error.
 alias mkdir='mkdir -p'
-#
+
+# commands replacing another one.
 alias which='type -a'
 alias ctags='/usr/bin/ctags'
-#
+
+# print the search path and move the parent directory.
 alias path='echo -e ${PATH//:/\\n}'
 alias ..='cd ..'
-#
+
+# frequently used commands in an abbreviated form.
 alias g='git'
 
+# treating files including Japanese.
+export LESS='-R'
+
+#
+# defines the functions
+#
+# check whether the process is running, how to use below in a function
 check_process() {
 	pgrep -f "$1" >/dev/null
 }
+# check whether the process is running
+# if running, use the process functions
 up() {
 	local proc_name="tmux"
 	if check_process "$proc_name"; then
 		byobu popup -E bash
 	fi
 }
-
-export LESS='-R'
 
