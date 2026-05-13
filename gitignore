@@ -1,6 +1,7 @@
 ### first, ignore all ###
 /*
 /.**
+/vim/pre-bundles.vim
 
 ### specifies not to ignore ###
 !/zshenv
