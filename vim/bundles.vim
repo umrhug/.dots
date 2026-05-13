@@ -1,75 +1,61 @@
 filetype off
-
-"Start dein Scripts-----------------------------
+" ward off unexpected things that your distro might have made, as
+" well as sanely reset options when re-sourcing .vimrc
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
-" Required:
-set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+" already configured in pre-bundle.vim
+"set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-if dein#load_state("$HOME/.cache/dein")
-  call dein#begin("$HOME/.cache/dein")
+" modifies it below like pre-bundle.vim
+"if dein#load_state("$HOME/.cache/dein")
+"  call dein#begin("$HOME/.cache/dein")
+if dein#load_state(s:dein_base)
+  call dein#begin(s:dein_base)
 
-  " Let dein manage dein
-  " Required:
-  call dein#add("$HOME/.cache/dein/repos/github.com/Shougo/dein.vim")
-
-""call dein#add('Shougo/deoplete.nvim')
-""if !has('nvim')
-""  call dein#add('roxma/nvim-yarp')
-""  call dein#add('roxma/vim-hug-neovim-rpc')
-""endif
-""let g:deoplete#enable_at_startup = 1
-
-  " Add or remove your plugins here like this:
-  """call dein#add('Shougo/neosnippet.vim')
-  """call dein#add('Shougo/neosnippet-snippets')
-  """call dein#add('Shougo/unite.vim')
-  """call dein#add('Shougo/neomru.vim')
-""  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
- 
-  """call dein#add('vim-scripts/taglist.vim')
-  """call dein#add('tpope/vim-fugitive')
-
-  call dein#add('cocopon/iceberg.vim')
-  call dein#add('tomasr/molokai')
-  call dein#add('morhetz/gruvbox')
-
-  call dein#add('110y/vim-buftabline')
-  call dein#add('vim-airline/vim-airline')
-"  call dein#add('itchyny/lightline.vim')
-
-  """call dein#add('thinca/vim-quickrun')
-""  call dein#add('davidhalter/jedi-vim')
-
-  call dein#add('rust-lang/rust.vim')
-  call dein#add('fatih/vim-go')
+  " already configured in pre-bundle.vim
+  "call dein#add("$HOME/.cache/dein/repos/github.com/Shougo/dein.vim")
 
   "
+  " plugins go here:
+  "
+  " visualizeing ... colorscheme, statusline, bufferline
+  call dein#add('cocopon/iceberg.vim')
+  call dein#add('vim-airline/vim-airline')
+  "call dein#add('')
+
+  " customizing ... tig
+  "call dein#add('Shougo/unite.vim')
+  "call dein#add('Shougo/neomru.vim')
   call dein#add('iberianpig/tig-explorer.vim')
 
-  " python language server
-  call dein#add('prabirshrestha/vim-lsp')
-  call dein#add('prabirshrestha/async.vim')
+  " supporting langs
+  "call dein#add('rust-lang/rust.vim')
+  "call dein#add('fatih/vim-go')
 
-  "call map(dein#check_clean(), "delete(v:val, 'rf')")
-  "call dein#recache_runtimepath()
-
-  " Required:
+  "
   call dein#end()
   call dein#save_state()
 endif
 
-" Required:
+" check the unused plugins, cleanup the plugins and rebuild a runtimepath cache
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
+
+" attempt to determine the type of a file based on its name and possibly its
+" contents. use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
 filetype plugin indent on
+
+" enable syntax highlighting
 syntax enable
 
-" If you want to install not installed plugins on startup.
+" uncommnet if you want to install not-installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
-
-"End dein Scripts-------------------------
 
