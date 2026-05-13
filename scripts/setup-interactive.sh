@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-MKDIR="/bin/mkdir"
+MKDIR="/bin/mkdir -p"
 SH="/bin/sh"
 RM="/bin/rm -f"
 CURL="/bin/curl"
@@ -9,7 +9,7 @@ SYMLNK="/bin/ln -sf"
 #
 
 # make the directory to install the dein... maybe not necessary?
-${MKDIR} -p "${HOME}/.cache/dein"
+${MKDIR} "${HOME}/.cache/dein"
 
 # do not run the shell script directly without downloading first.
 # sh -c $(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
@@ -57,4 +57,7 @@ ${SYMLNK} "${HOME}/.dots/gvimrc" "${HOME}/.gvimrc"
 # link the tig configuration on the home directory after removing its original
 ${RM} "${HOME}/.tigrc"
 ${SYMLNK} "${HOME}/.dots/tigrc" "${HOME}/.tigrc"
+
+# creates the default directories, apps, libs, projs and workspace
+${MKDIR} ${HOME}/apps ${HOME}/libs ${HOME}/projs ${HOME}/workspace
 
