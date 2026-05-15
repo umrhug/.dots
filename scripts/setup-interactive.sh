@@ -61,3 +61,10 @@ ${SYMLNK} "${HOME}/.dots/tigrc" "${HOME}/.tigrc"
 # creates the default directories, apps, libs, projs and workspace
 ${MKDIR} ${HOME}/apps ${HOME}/libs ${HOME}/projs ${HOME}/workspace
 
+# use terminal configuration
+cat <<EOF > ${HOME}/.dots/terminalrc
+#
+#
+exporet TERMINAL=
+EOF
+
