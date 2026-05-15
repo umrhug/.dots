@@ -96,6 +96,7 @@ set noexpandtab		" expand tab to spaces
 
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType go     setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType text   setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120 wrap
 
 let mapleader = "\<Space>"
 
@@ -273,6 +274,19 @@ if has_key(dein#get(), 'vim-lsp')
 	let g:lsp_diagnostics_enabled = 0
 endif
 
+"
+" creates some commands by self
+"
+
+" open .vimrc
+command! Vimrc call s:open_vimrc()
+function s:open_vimrc()
+	execute 'edit ' . '~/.vimrc'
+endfunction
+"
+"
+source $HOME/.dots/vim/notes.vim
+"
 "
 " import keybind and macro defines
 "
