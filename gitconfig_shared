@@ -1,6 +1,3 @@
-[core]
-	excludesfile = ~/.dots/gitignore
-[push]
 [color]
 	status = auto
 	diff = auto
@@ -21,6 +18,8 @@
 	user = umrhug
 [diff]
 	tool = vimdiff
+[difftool]
+	prompt = false
 [difftool "vimdiff"]
 	cmd = vimdiff -d \"$LOCAL\" \"$REMOTE\"
 	path = 
