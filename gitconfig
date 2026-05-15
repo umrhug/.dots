@@ -11,3 +11,5 @@
 	editor = vim
 [include]
 	path = ~/.dots/gitconfig_shared
+[init]
+	defaultBranch = main
