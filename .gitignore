@@ -1,0 +1,31 @@
+### at first, ignore all files
+/*
+/.**
+
+### adds a file
+!/.gitignore
+!/LICENSE
+!/README.md
+!/bash/bash_aliases
+!/bash/bashrc
+!/bash/profile
+!/gitconfig
+!/gitconfig_shared
+!/gvimrc
+!/screenrc
+!/scripts/install.sh
+!/scripts/setup-interactive.sh
+/terminalrc
+!/tigrc
+/vim/
+!/vim/bundles.vim
+!/vim/keybind.vim
+!/vim/notes.vim
+!/vimrc
+!/gvimrc
+!/zsh/zcompdump
+!/zsh/zprofile
+!/zsh/zsh_aliases
+!/zsh/zshrc
+!/zsh/zshrc.darwin
+!/zshenv
