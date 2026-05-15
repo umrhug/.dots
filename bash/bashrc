@@ -169,3 +169,16 @@ fi
 #  exec uim-fep
 #fi
 
+if [ -e "${HOME}/.dots/terminalrc" ]; then
+	. "${HOME}/.dots/terminalrc"
+else
+	export TERMINAL=
+fi
+
+if [ -n "$TERMINAL" ] && [ -z "$TERMINAL_RUNNING" ]; then
+	if command -v "$TERMINAL" >/dev/null 2>&1 ; then
+		export TERMINAL_RUNNING=1
+		exec "$TERMINAL" &
+	fi
+fi
+
