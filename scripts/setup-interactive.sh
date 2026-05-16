@@ -65,6 +65,6 @@ ${MKDIR} ${HOME}/apps ${HOME}/libs ${HOME}/projs ${HOME}/workspace
 cat <<EOF > ${HOME}/.dots/terminalrc
 #
 #
-exporet TERMINAL=
+export TERMINAL=
 EOF
 
