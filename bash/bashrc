@@ -155,30 +155,37 @@ fi
 #
 # set and configure uim-fep at the last
 #
-#export GTK_IM_MODULE=uim
-#export QT_IM_MODULE=uim
-#export XMODIFIERS=@im=uim
-#
-# prevent from double start
-#
-#if [ -z "$UIM_FEP_RUNNING" ]; then
-#  export UIM_FEP_RUNNING=1
-  ## in the case of chromebook terminal, put firts character '-' as prefix
-  ## remove prefix '-'
-  #exec uim-fep -e "${0#-}"
-#  exec uim-fep
-#fi
+export FEP="uim-fep"
+if command -v "$FEP" >/dev/null 2>&1 ; then
 
+  export GTK_IM_MODULE=uim
+  export QT_IM_MODULE=uim
+  export XMODIFIERS=@im=uim
+  #
+  # prevent from double start
+  #
+  if [ -z "$UIM_FEP_RUNNING" ]; then
+    export UIM_FEP_RUNNING=1
+    ## in the case of chromebook terminal, put firts character '-' as prefix
+    ## remove prefix '-'
+    #exec uim-fep -e "${0#-}"
+    exec "$FEP" &
+  fi
+fi
+
+#
+# execute the user terminal to be specified by '$HOME/.dots/terminalrc'
+#
 if [ -e "${HOME}/.dots/terminalrc" ]; then
-	. "${HOME}/.dots/terminalrc"
+  . "${HOME}/.dots/terminalrc"
 else
-	export TERMINAL=
+  export TERMINAL=
 fi
 
 if [ -n "$TERMINAL" ] && [ -z "$TERMINAL_RUNNING" ]; then
-	if command -v "$TERMINAL" >/dev/null 2>&1 ; then
-		export TERMINAL_RUNNING=1
-		exec "$TERMINAL" &
-	fi
+  if command -v "$TERMINAL" >/dev/null 2>&1 ; then
+    export TERMINAL_RUNNING=1
+    exec "$TERMINAL" &
+  fi
 fi
 
