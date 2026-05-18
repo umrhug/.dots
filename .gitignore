@@ -19,6 +19,7 @@
 !/scripts/setup-interactive.sh
 /terminalrc
 !/tigrc
+!/uim
 !/vim/
 !/vim/bundles.vim
 !/vim/keybind.vim

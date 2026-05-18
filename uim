@@ -1,0 +1,5 @@
+(define default-im-name 'mozc)
+(define-key generic-on-key? '("<Control> "))
+(define-key generic-off-key? '("<Control> "))
+
+(define mozc-use-with-vi? #t)
