@@ -8,7 +8,7 @@ alias po='popd'
 alias jo='jobs -l'
 
 # command 'ls' in abbreviated variations.
-alias ls='ls --color=auto -G'
+alias ls='ls --color=always -G'
 alias ll='ls -alF -h'
 alias la='ls -A'
 alias l='ls -CF'
