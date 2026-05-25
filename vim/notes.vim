@@ -18,14 +18,14 @@ command! NoteList call s:note_list_and_search()
 
 function! s:open_note_file(argv)
   let l:date = empty(a:argv) ? strftime('%Y%m%d') : a:argv
-  let l:filepath = g:notes_dir . l:date . '.txt'
+  let l:filepath = g:notes_dir . l:date . '.md'
   if !isdirectory(g:notes_dir) | call mkdir(g:notes_dir, 'p') | endif
   execute 'edit ' . l:filepath
 endfunction
 
 function! s:note_list_and_search()
   if !isdirectory(g:notes_dir) | return | endif
-  let l:files = split(globpath(g:notes_dir, '*.txt'), "\n")
+  let l:files = split(globpath(g:notes_dir, '*.md'), "\n")
   call reverse(sort(l:files))
   if empty(l:files) | echo "Not found a file" | return | endif
 
@@ -61,8 +61,8 @@ function! s:search_note(keyword)
   if empty(a:keyword) | return | endif
   
   " 1. silent! で外部bashへの出力を完全にシャットアウト
-  """execute 'silent! grep! ' . shellescape(a:keyword) . ' ' . g:notes_dir . '*.txt'
-  execute 'silent! vimgrep! /' . a:keyword . '/j  ' . g:notes_dir . '*.txt'
+  """execute 'silent! grep! ' . shellescape(a:keyword) . ' ' . g:notes_dir . '*.md'
+  execute 'silent! vimgrep! /' . a:keyword . '/j  ' . g:notes_dir . '*.md'
   
   " 2. 外部コマンド実行直後に画面を強制再描画（これでゴミが完全に消えます）
   redraw!
